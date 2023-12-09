@@ -16,9 +16,13 @@ namespace ConsoleApp
         {
             var commandsToAdd = new List<Command>
             {
-                new Command("Team1", "City1", 10, 5, 3),
-                new Command("Team2", "City2", 8, 7, 2),
-                new Command("Team3", "City3", 12, 3, 5),
+                //new Command("Team1", "City1", 10, 5, 3),
+                //new Command("Team2", "City2", 8, 7, 2),
+                //new Command("Team3", "City3", 12, 3, 5),
+
+                new Command("Team1", "City1", 10, 5, 3, 10, 5),
+                new Command("Team2", "City2", 8, 7, 2, 8, 7),
+                new Command("Team3", "City3", 12, 3, 5, 12, 3),
             };
 
             context.Commands.AddRange(commandsToAdd);
