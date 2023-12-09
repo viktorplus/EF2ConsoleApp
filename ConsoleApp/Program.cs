@@ -1,5 +1,6 @@
 ﻿using DBContext;
-
+using Microsoft.Data.SqlClient;
+using Models;
 
 namespace ConsoleApp
 {
@@ -7,9 +8,24 @@ namespace ConsoleApp
     {
         static void Main(string[] args)
         {
-            Func.CreateDB();
-            Func.AddCommand();
-
+            try
+            {
+                using (var db = new CommandContext())
+                {
+                    Func.CreateDB(db);
+                    Func.AutoAddCommand(db);
+                    //Func.AddCommand(db); // ВВод с клавиатуры
+                    Func.ShowCommands(db);
+                }
+            }
+            catch (SqlException ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
         }
     }
 }
