@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using Models;
-using DBContext;
-using Microsoft.EntityFrameworkCore;
-using System.Linq;
+﻿using DBContext;
 
 
 namespace ConsoleApp
@@ -12,7 +7,9 @@ namespace ConsoleApp
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+            Func.CreateDB();
+            Func.AddCommand();
+
         }
     }
 }
